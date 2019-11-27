@@ -144,16 +144,16 @@ namespace miniplc0 {
 				// 如果当前已经读到了文件尾，则解析已经读到的字符串为整数
 				if (!current_char.has_value()) {
 
-					int rel = atoi(ss.str().c_str());
+					//int rel = atoi(ss.str().c_str());
 					//std::string str1 = std::to_string(rel);  //目的是转换成str判断123abc
 					//if(std::strlen(str1.c_str())<std::strlen(ss.str().c_str()))
 					//	return std::make_pair(std::optional<Token>(), std::make_optional<CompilationError>(pos, ErrorCode::ErrInvalidIdentifier));
 					//if(ss.str()=="0")
 
-					if (rel != 0)
+					//if (rel != 0)
 						return std::make_pair(std::make_optional<Token>(TokenType::UNSIGNED_INTEGER, ss.str(), pos, currentPos()), std::optional<CompilationError>());
-					else
-						return std::make_pair(std::optional<Token>(), std::make_optional<CompilationError>(pos, ErrorCode::ErrInvalidIdentifier));
+					//else
+						//return std::make_pair(std::optional<Token>(), std::make_optional<CompilationError>(pos, ErrorCode::ErrInvalidIdentifier));
 				}
 
 				//     解析成功则返回无符号整数类型的token，否则返回编译错误
@@ -178,10 +178,10 @@ namespace miniplc0 {
 				{
 					unreadLast();
 					int rel = atoi(ss.str().c_str());
-					if (rel != 0)
+					//if (rel != 0)
 						return std::make_pair(std::make_optional<Token>(TokenType::UNSIGNED_INTEGER, ss.str(), pos, currentPos()), std::optional<CompilationError>());
-					else
-						return std::make_pair(std::optional<Token>(), std::make_optional<CompilationError>(pos, ErrorCode::ErrInvalidIdentifier));
+					//else
+						//return std::make_pair(std::optional<Token>(), std::make_optional<CompilationError>(pos, ErrorCode::ErrInvalidIdentifier));
 					//     解析成功则返回无符号整数类型的token，否则返回编译错误
 				}
 				break;
