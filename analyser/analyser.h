@@ -80,7 +80,7 @@ namespace miniplc0 {
 		// 是否是常量
 		bool isConstant(const std::string&);
 		// 是否是
-		bool isInt32( std::string& s);
+		bool isInt32(const std::string& s);
 		// 获得 {变量，常量} 在栈上的偏移
 		int32_t getIndex(const std::string&);
 	private:
