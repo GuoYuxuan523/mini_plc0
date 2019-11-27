@@ -474,19 +474,21 @@ namespace miniplc0 {
 	bool Analyser::isConstant(const std::string& s) {
 		return _consts.find(s) != _consts.end();
 	}
-	bool Analyser::isInt32( std::string& s) {
+	bool Analyser::isInt32(const std::string& s) {
+		/*
 		std::string s2;
-		for (int i = 0; i < strlen(s.c_str()); i++) {
+		for (int i = 0; i < s.size(); i++) {
 			if (s[i] != '0') {
 				s = s.substr(i);
 				break;
 			}
 		}
-		if (strlen(s.c_str()) > 10)
+		*/
+		if (s.size()> 10)
 			return false;
-		else if (strlen(s.c_str()) < 10)
+		else if (s.size() < 10)
 			return true;
-		else if (strcmp(s.c_str(), "2147483647") > 0)
+		else if (s.compare("2147483647") > 0)
 			return false;
 		else return true;
 	}
